@@ -105,7 +105,7 @@ router.post('/company/create',
  * Get all the companies of user
  */
 router.get('/employee/history',
-    // middleware.isLoggedin,
+    middleware.isLoggedin,
     async function (req, res) {
         /**
          * Get history of employee
