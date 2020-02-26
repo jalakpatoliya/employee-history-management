@@ -1,0 +1,28 @@
+<%- include ("../partials/header") %>
+
+<h1 class="ui header">Add NEW COMPANY</h1>
+<br>
+
+<%# Form for adding new Company%>
+<form class="ui form" action="/company/create" method="post">
+    <div class="fields">
+        <div class="field">
+            <div class="required field">
+                <label>Name</label>
+                <input required name="name" type="text" placeholder="name" maxlength="50" minlength="1">
+            </div>
+        </div>
+        <div class="field">
+            <div class="required field">
+                <label>Description</label>
+                <input type="text" required name="description">
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" class="ui basic blue button" value="Submit">
+</form>
+
+
+
+<%- include ("../partials/footer") %>

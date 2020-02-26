@@ -1,0 +1,48 @@
+<%- include ("../partials/header") %>
+
+<h1 class="ui header">JOIN COMPANY</h1>
+<br>
+
+<%# Form to JOIN Company%>
+
+<% const companyUrl = `/company/join/${companyId}` %>
+
+<form class="ui form" action=<%=companyUrl %> method="post">
+    <div class="fields">
+        <div class="field">
+            <div class="required field">
+                <label>From</label>
+                <div class="ui calendar" id="date">
+                    <div class="ui input left icon">
+                        <i class="calendar icon"></i>
+                        <input required name="from" type="text" placeholder="Date">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="required field">
+                <label>To</label>
+                <div class="ui calendar" id="date2">
+                    <div class="ui input left icon">
+                        <i class="calendar icon"></i>
+                        <input name="to" type="text" placeholder="Date">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" class="ui basic blue button" value="Submit">
+</form>
+
+<script>
+    $('#date').calendar({
+        type: 'date'
+    });
+    $('#date2').calendar({
+        type: 'date'
+    });
+</script>
+
+<%- include ("../partials/footer") %>
