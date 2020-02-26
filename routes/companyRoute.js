@@ -74,7 +74,7 @@ router.get("/company/all", async function (req, res) {
  * Create a new company form
  */
 router.get('/company/create',
-    // middleware.isLoggedin,
+    middleware.isLoggedin,
     async function (req, res) {
         return res.render('./Company/createCompany.ejs');
     });
@@ -101,7 +101,19 @@ router.post('/company/create',
         // return res.json(companyData);
     });
 
+/**
+ * Get all the companies of user
+ */
+router.get('/employee/history',
+    // middleware.isLoggedin,
+    async function (req, res) {
+        /**
+         * Get history of employee
+         */
+        const companies = await Company.find().populate("users").exec();
 
+        return res.render('./Employee/employee.ejs', { companies });
+    });
 
 //=========================================================
 //=============== isLoggedIn function======================

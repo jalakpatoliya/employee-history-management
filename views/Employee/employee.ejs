@@ -1,0 +1,55 @@
+<%- include ("../partials/header") %>
+
+<div class="ui container">
+    <br>
+    <!-- <div class="ui secondary pointing menu">
+        <a class="item" href="/addCandidate">
+            <i class="address card outline icon"></i>Add Candidate</a>
+        <a class="active item">
+            <i class="user icon"></i>View all candidates</a>
+
+    </div> -->
+
+
+    <h1 class="ui header">EMPLOYEE HISTORY</h1>
+    <br>
+
+    <!-- Show all Companies -->
+    <div style="width:1200px;overflow-x: scroll;">
+        <table class="ui green table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>From</th>
+                    <th>To</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <%  for (let i = 0; i < companies.length; i++) {
+                            const singledata = companies[i];  
+                            %>
+                <tr>
+                    <td><%=singledata.name %></td>
+                    <td><%=singledata.image %></td>
+                    <td><%=singledata.description %></td>
+                    <td><%=singledata.employees[0].from %></td>
+                    <td><%=singledata.employees[0].to %></td>
+
+                </tr>
+                <% } %>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
+
+
+
+<%- include ("../partials/footer") %>
